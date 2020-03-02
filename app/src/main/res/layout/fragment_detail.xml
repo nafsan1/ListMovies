@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.newsmovie.model.Movie" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/fragment_movie_detail_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".view.DetailFragment">
+
+        <LinearLayout
+            android:layout_margin="@dimen/spacing_large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_weight="1"
+                android:clipToPadding="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="false">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imageurl="@{viewmodel.poster_path}"
+                    android:scaleType="fitXY" />
+
+                <!--<ImageView
+                    android:src="@drawable/ic_launcher_background"
+                    android:id="@+id/img_movie_poster"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:imageurl="@{viewmodel.poster_path}"
+                    android:scaleType="centerCrop" />-->
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:padding="@dimen/spacing_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_movie_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{viewmodel.title}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="#2d2d2d"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/imgBtnFav"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:src="@drawable/ic_favorite_border_black_24dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Release date: "
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_release_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.release_date}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <TextView
+                   android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Overview"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="#2d2d2d"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txt_movie_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:textColor="#2d2d2d"
+                    android:text="@{viewmodel.overview}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <!-- TODO: Update blank fragment layout -->
+
+
+    </LinearLayout>
+</layout>

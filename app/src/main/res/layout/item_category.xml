@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.newsmovie.viewmodel.ListViewModel" />
+    </data>
+
+  <androidx.core.widget.NestedScrollView
+      android:background="@color/white"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+      <TextView
+          android:layout_marginTop="@dimen/spacing_large"
+          android:id="@+id/txtPopular"
+          android:padding="@dimen/spacing_large"
+          android:layout_width="match_parent"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          android:textColor="@color/grey_40"
+          android:layout_height="wrap_content"
+          android:text="@string/popular"/>
+
+      <TextView
+          android:id="@+id/txtUpcoming"
+          android:padding="@dimen/spacing_large"
+          android:layout_width="match_parent"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          android:textColor="@color/grey_40"
+          android:layout_height="wrap_content"
+          android:text="@string/upcoming"/>
+
+      <TextView
+          android:id="@+id/txtTopRated"
+          android:padding="@dimen/spacing_large"
+          android:layout_width="match_parent"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          android:textColor="@color/grey_40"
+          android:layout_height="wrap_content"
+          android:text="@string/top_rated"/>
+
+      <TextView
+          android:layout_marginBottom="@dimen/spacing_large"
+          android:id="@+id/txtNowPlaying"
+          android:padding="@dimen/spacing_large"
+          android:layout_width="match_parent"
+          android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+          android:textColor="@color/grey_40"
+          android:layout_height="wrap_content"
+          android:text="@string/now_playing"/>
+</LinearLayout>
+  </androidx.core.widget.NestedScrollView>
+</layout>
