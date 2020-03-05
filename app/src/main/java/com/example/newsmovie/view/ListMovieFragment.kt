@@ -31,7 +31,6 @@ class ListMovieFragment : Fragment() {
     private val now_playing = "now_playing"
     private val top_rated = "top_rated"
     private val upcoming = "upcoming"
-    private var category = now_playing
     private lateinit var dataBindingCategory:ItemCategoryBinding
     private lateinit var navController: NavController
 
