@@ -1,23 +1,19 @@
 package com.example.newsmovie.adapter
 
-import android.util.Log
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsmovie.R
 import com.example.newsmovie.databinding.ItemMovieBinding
 import com.example.newsmovie.model.Movie
-import com.example.newsmovie.view.ListMovieFragmentDirections
-import com.example.newsmovie.view.MovieClickListener
+
 
 
 class MovieListAdapter(private val movieList: ArrayList<Movie>) :
-    RecyclerView.Adapter<MovieListAdapter.AnimalViewHolder>(),
-    MovieClickListener {
+    RecyclerView.Adapter<MovieListAdapter.AnimalViewHolder>(){
 
     private lateinit var listener:OnItemOnClick
 
@@ -45,14 +41,6 @@ class MovieListAdapter(private val movieList: ArrayList<Movie>) :
         holder.itemView.setOnClickListener {
             listener.onItemClick(movie,it)
         }
-
-        holder.view.listener = this
-
-    }
-
-    override fun onClick(v: View) {
-
-
     }
 
     class AnimalViewHolder(var view: ItemMovieBinding) : RecyclerView.ViewHolder(view.root)
